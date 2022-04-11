@@ -653,7 +653,8 @@ bingoList[23] = [
     { name: "Daruk's Protection", types: ["Divine Beast","Eldin"] },
     { name: "Collect 6 Picture Memories", types: ["Camera"] },
     { name: "Remake a Champion's Weapon or Shield", types: ["Equipment","Divine Beast","Gems"] },
-    { name: "Activate 8 Towers", types: ["Tower"] }
+    { name: "Climbing Gear ★", types: ["Clothes","Climbing Gear","Great Fairy"] },
+    { name: "Activate 8 Towers", types: ["Tower"], image: "8Towers.png" }
 ];
 bingoList[24] = [
     { name: "'Leviathan Bones' Side Quest", types: ["Side Quest","Camera"] },
