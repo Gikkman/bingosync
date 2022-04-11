@@ -1,0 +1,3 @@
+SECRET_KEY='test2342sstsfgasjbdfhksbdfjhsgdkf'
+ADMINS=None
+SERVER_EMAIL=None

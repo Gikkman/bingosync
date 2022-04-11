@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 IS_PROD = False
 
-from bingosync.secret_settings import SECRET_KEY, ADMINS, SERVER_EMAIL, DB_USER
+from bingosync.secret_settings import SECRET_KEY, ADMINS, SERVER_EMAIL
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = not IS_PROD
@@ -89,9 +89,8 @@ WSGI_APPLICATION = 'bingosync.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'bingosync',
-        'USER': DB_USER,
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join('data','db.sqlite3')
     }
 }
 

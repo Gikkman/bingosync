@@ -25,3 +25,30 @@ traffic to the django and tornado servers. I use [postgres](http://www.postgresq
 for the database. Conveniently, this machine is the same one that I run 
 [bingobot](https://github.com/kbuzsaki/bingobot) off of. Maybe there's some 
 opportunity for integration there in the future :)
+
+### Running on local machine
+There are a couple of pre-requiesets to run this on your local machine:
+* Install nodejs if you don't have it (`brew install node` or `sudo apt install nodejs`)
+* Edit the `requirements.txt` file, and remove the `psycopg2` dependency, then run `pip install -r requirements.txt`
+* Edit the file `bingosync-app/bingosync/settings.py`
+ * Remove the import of `DB_USER` from `secret_settings.py`
+ * Change the `DATABASES` settings to the following:
+```
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join('database','db.sqlite3')
+    }
+}
+```
+* Create a file `bingosync-app/bingosync/secret_settings.py` and enter the following into it:
+```
+SECRET_KEY='test2342sstsfgasjbdfhksbdfjhsgdkf'
+ADMINS=None
+SERVER_EMAIL=None
+```
+* Create two folders under `bingosync-app`. One named `logs` and one named `database`
+* From `bingosync-app`, run `python manage.py migrate && python manage.py runserver`
+* Open a 2nd terminal. From `bingosync-websocket`, run `python app.py`
+
+Now you can access the site on `localhost:8080`
