@@ -8,7 +8,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('bingosync', '0031_auto_20200120_0816'),
+        ('bingosync', '0032_auto_20200430_1524'),
     ]
 
     operations = [
