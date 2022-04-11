@@ -29,6 +29,8 @@ opportunity for integration there in the future :)
 ### Running on local machine
 There are a couple of pre-requiesets to run this on your local machine:
 * Install nodejs if you don't have it (`brew install node` or `sudo apt install nodejs`)
+* Setup a virtual env for the app. Run `python -m venv venv`
+* Source the virtual environment. Run `source venv/bin/activate`
 * Edit the `requirements.txt` file, and remove the `psycopg2` dependency, then run `pip install -r requirements.txt`
 * Edit the file `bingosync-app/bingosync/settings.py`
  * Remove the import of `DB_USER` from `secret_settings.py`
@@ -48,6 +50,9 @@ ADMINS=None
 SERVER_EMAIL=None
 ```
 * Create two folders under `bingosync-app`. One named `logs` and one named `database`
+
+To run the app, either run it from VSCode's launch options, or do the following:
+* Source the virtual environment (if you haven't aready). Run `source venv/bin/activate`
 * From `bingosync-app`, run `python manage.py migrate && python manage.py runserver`
 * Open a 2nd terminal. From `bingosync-websocket`, run `python app.py`
 
